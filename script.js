@@ -1,17 +1,28 @@
+// Display today's date
+const options = { weekday: 'long', month: 'long', day: 'numeric' };
+document.getElementById('date-display').innerHTML = new Date().toLocaleDateString(undefined, options);
+
 function addTask() {
     const input = document.getElementById('taskInput');
-    const taskText = input.value;
+    const taskList = document.getElementById('taskList');
 
-    if (taskText === '') return; // Don't add empty tasks
+    if (input.value.trim() === "") return;
 
     const li = document.createElement('li');
-    li.innerHTML = taskText;
+    li.textContent = input.value;
     
-    // Toggle the 'checked' class when clicked
     li.onclick = function() {
         this.classList.toggle('checked');
     };
 
-    document.getElementById('taskList').appendChild(li);
-    input.value = ''; // Clear input field
+    // Add to top of list
+    taskList.insertBefore(li, taskList.firstChild);
+    input.value = "";
 }
+
+// Allow pressing "Enter" key to add
+document.getElementById('taskInput').addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        addTask();
+    }
+});

@@ -1,9 +1,71 @@
-body { font-family: sans-serif; background: #f4f4f9; display: flex; justify-content: center; padding: 50px; }
-.container { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 300px; }
-.input-group { display: flex; gap: 5px; }
-input { flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
-button { padding: 8px; cursor: pointer; background: #28a745; color: white; border: none; border-radius: 4px; }
-ul { list-style: none; padding: 0; margin-top: 20px; }
-li { padding: 10px; border-bottom: 1px solid #eee; cursor: pointer; display: flex; justify-content: space-between; }
-/* This class will be toggled by JavaScript */
-.checked { text-decoration: line-through; color: #888; }
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+
+body { 
+    background-color: #f8f9fa; 
+    display: flex; 
+    justify-content: center; 
+    padding: 20px;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: 24px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+header h1 { font-size: 24px; color: #1a1a1a; margin-bottom: 5px; }
+header p { font-size: 14px; color: #6c757d; margin-bottom: 25px; }
+
+.input-section { display: flex; gap: 10px; margin-bottom: 20px; }
+
+input {
+    flex: 1;
+    padding: 12px 18px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus { border-color: #007bff; }
+
+#addBtn {
+    width: 45px;
+    height: 45px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#addBtn:active { transform: scale(0.9); }
+
+ul { list-style: none; }
+
+li {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+li:hover { background: #fafafa; }
+
+/* The "Checked" Look */
+li.checked {
+    background: #f1f3f5;
+    text-decoration: line-through;
+    color: #adb5bd;
+    border-color: transparent;
+}
